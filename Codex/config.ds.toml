@@ -1,0 +1,27 @@
+model = "deepseek-v4-flash"
+model_provider = "deepseek"
+preferred_auth_method = "apikey"
+forced_login_method = "api"
+model_reasoning_effort = "high"
+model_catalog_json = "~/.codex/models.json"
+
+[model_providers.deepseek]
+name = "deepseek"
+base_url = "https://api.deepseek.com/"
+wire_api = "responses"
+experimental_bearer_token = "sk-7e6ac748b50e4160883701d370ffcdbf"
+
+[projects.'s:\unisoft']
+trust_level = "trusted"
+
+[projects.'q:\dev\projects\vivo-crack-out']
+trust_level = "trusted"
+
+[projects.'q:\dev\projects\daizy night']
+trust_level = "trusted"
+
+[projects.'y:\work\vivo crack out']
+trust_level = "trusted"
+
+[windows]
+sandbox = "elevated"

@@ -1,0 +1,13 @@
+model_provider = "ZAI"
+model = "glm-5.3-flash"
+model_reasoning_effort = "max"
+model_catalog_json = "~/.codex/models.json"
+
+[model_providers.ZAI]
+name = "ZAI"
+base_url = "https://open.bigmodel.cn/api/v1"
+experimental_bearer_token = "fca7e0e3b0a7443b85aba2e7e0b089e4.OS1i92QRyJdjU9XP"
+wire_api = "responses"
+
+[projects.'q:\dev\projects\vivo-crack-out']
+trust_level = "trusted"
