@@ -9,7 +9,7 @@ model_catalog_json = "~/.codex/models.json"
 name = "deepseek"
 base_url = "https://api.deepseek.com/"
 wire_api = "responses"
-experimental_bearer_token = "sk-7e6ac748b50e4160883701d370ffcdbf"
+experimental_bearer_token = ""
 
 [projects.'s:\unisoft']
 trust_level = "trusted"
