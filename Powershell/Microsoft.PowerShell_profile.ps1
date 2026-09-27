@@ -116,3 +116,7 @@ function ADB-Push {
 }
 Set-Alias aap "ADB-Push"
 
+function GNUCPP {
+    g++ $args
+}
+Set-Alias gpp "GNUCPP"
