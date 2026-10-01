@@ -1,5 +1,26 @@
+# 加载时延测速
+# $sw = [System.Diagnostics.Stopwatch]::StartNew()
+# function Mark($name) { Write-Host ("{0}ms | {1}" -f $sw.ElapsedMilliseconds, $name) -ForegroundColor Cyan }
+
+Write-Host "Syerain | sleepy boy determined to save the world ."
+# Mark "proc start"
+
+
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/amro.omp.json" | Invoke-Expression
-Import-Module Terminal-Icons
+# Mark "ok omp"
+
+# Import-Module Terminal-Icons
+# 直接导入icon会占用 230ms 启动时间
+# 现改为空闲加载
+$null = Register-EngineEvent -SourceIdentifier PowerShell.OnIdle -MaxTriggerCount 1 -Action {
+    Import-Module Terminal-Icons
+    Unregister-Event -SourceIdentifier PowerShell.OnIdle
+}
+# Mark "ok icons"
+
+# zoxide
+Invoke-Expression (& {zoxide init powershell | Out-String})
+# Mark "ok zoxide"
 
 # Notepad3
 Set-Alias pad "S:\UNISOFT\Notepad3\Notepad3.exe"
@@ -23,8 +44,7 @@ function Edit-Profile{
 }
 Set-Alias pf "Edit-Profile"
 
-# zoxide
-Invoke-Expression (& {zoxide init powershell | Out-String})
+
 
 # l -> ls
 Set-Alias l ls
@@ -120,3 +140,11 @@ function GNUCPP {
     g++ $args
 }
 Set-Alias gpp "GNUCPP"
+
+function YAZI-EXPLORER {
+    yazi $args
+}
+Set-Alias yi "YAZI-EXPLORER"
+
+# Mark "ok func&alias"
+# Mark "ok end"
